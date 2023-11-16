@@ -56,6 +56,11 @@ app.post('/scrape', async (req, res) => {
         
             // Your scraping logic here...
             // Example: scraping title from the webpage
+            const priceStart = [];
+            $('#box > div:nth-child(2)').each((index, element) => {
+                priceStart.push($(element).text());
+            });
+          
             const priceOne = [];
             $('#box > div:nth-child(3)').each((index, element) => {
                 priceOne.push($(element).text());
@@ -66,7 +71,7 @@ app.post('/scrape', async (req, res) => {
                 priceTwo.push($(element).text());
             });
     
-            allPricesArray.push(`${priceOne.toString().split(`:`).join(``)}<br> ${priceTwo.toString().split(`:`).join(``)}<br><br>`);
+            allPricesArray.push(`${priceStart.toString().split(`:`).join(``)}<br> ${priceOne.toString().split(`:`).join(``)}<br> ${priceTwo.toString().split(`:`).join(``)}<br><br>`);
             console.log(index);
 
         } else if(countryArray[index-1] ==`indonesia`){
