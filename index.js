@@ -85,7 +85,7 @@ app.post('/scrape', async (req, res) => {
         const allPricesArrayColonReplace= allPricesArrayFirstBraket;
 
         res.setHeader("Content-Type", "text/html");
-        res.send(`<h1>${allPricesArrayColonReplace}</h1><script>document.get<script>`);
+        res.send(`<p>${allPricesArrayColonReplace}</p><script>document.get<script>`);
         console.log(allPricesArrayColonReplace);
         
     
