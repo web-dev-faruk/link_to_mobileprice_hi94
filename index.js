@@ -66,7 +66,7 @@ app.post('/scrape', async (req, res) => {
                 priceTwo.push($(element).text());
             });
     
-            allPricesArray.push(`${priceOne.toString().split(`:`).join(``)}<br> ${priceTwo.toString().split(`:`).join(`)`)}<br><br>`);
+            allPricesArray.push(`${priceOne.toString().split(`:`).join(``)}<br> ${priceTwo.toString().split(`:`).join(``)}<br><br>`);
             console.log(index);
 
         } else if(countryArray[index] ==`indonesia`){
