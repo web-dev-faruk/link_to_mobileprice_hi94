@@ -45,7 +45,7 @@ app.post('/scrape', async (req, res) => {
     for (let index = 1; index <= 10; index++) {
 
 
-        if (countryArray[index] !==`indonesia`) {
+        if (countryArray[index-1] !==`indonesia`) {
             
             const modifiedURL= url.split(`hi94.com`).join(`hi94.com/${countryArray[index-1]}`);
             const response = await axios.get(modifiedURL);
@@ -69,7 +69,7 @@ app.post('/scrape', async (req, res) => {
             allPricesArray.push(`${priceOne.toString().split(`:`).join(``)}<br> ${priceTwo.toString().split(`:`).join(``)}<br><br>`);
             console.log(index);
 
-        } else if(countryArray[index] ==`indonesia`){
+        } else if(countryArray[index-1] ==`indonesia`){
             allPricesArray.push(`Check Indonesia mobile price from <a href="https://id.mobgsm.com/">mobgsm</a><br><br>`);
 
         }
