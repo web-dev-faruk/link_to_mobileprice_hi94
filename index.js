@@ -154,7 +154,7 @@ app.post('/scrape', async (req, res) => {
                     Australia
                 </summary>
                 <div>
-                    ${allPricesArray[0]}
+                    ${allPricesArray[0].split(`Price of`).join(``)}
                 </div>
             </details>
             <details>
@@ -162,7 +162,7 @@ app.post('/scrape', async (req, res) => {
                     Bangladesh
                 </summary>
                 <div>
-                  ${allPricesArray[1]}
+                  ${allPricesArray[1].split(`Price of`).join(``)}
                 </div>
             </details>
             <details>
@@ -170,7 +170,7 @@ app.post('/scrape', async (req, res) => {
                     Canada
                 </summary>
                 <div>
-                    ${allPricesArray[2]}
+                    ${allPricesArray[2].split(`Price of`).join(``)}
                 </div>
             </details>
             <details>
@@ -178,7 +178,7 @@ app.post('/scrape', async (req, res) => {
                     China
                 </summary>
                 <div>
-                    ${allPricesArray[3]}
+                    ${allPricesArray[3].split(`Price of`).join(``)}
                 </div>
             </details>
             <details>
@@ -186,7 +186,7 @@ app.post('/scrape', async (req, res) => {
                     India
                 </summary>
                 <div>
-                    ${allPricesArray[4]}
+                    ${allPricesArray[4].split(`Price of`).join(``)}
                 </div>
             </details>
             <details>
@@ -194,7 +194,7 @@ app.post('/scrape', async (req, res) => {
                     Malaysia
                 </summary>
                 <div>
-                    ${allPricesArray[5]}
+                    ${allPricesArray[5].split(`Price of`).join(``)}
                 </div>
             </details>
             <details>
@@ -202,7 +202,7 @@ app.post('/scrape', async (req, res) => {
                     Nigeria
                 </summary>
                 <div>
-                    ${allPricesArray[6]}
+                    ${allPricesArray[6].split(`Price of`).join(``)}
                 </div>
             </details>
             <details>
@@ -210,7 +210,7 @@ app.post('/scrape', async (req, res) => {
                     Pakistan
                 </summary>
                 <div>
-                    ${allPricesArray[7]}
+                    ${allPricesArray[7].split(`Price of`).join(``)}
                 </div>
             </details>
             <details>
@@ -218,7 +218,7 @@ app.post('/scrape', async (req, res) => {
                     UAE
                 </summary>
                 <div>
-                    ${allPricesArray[8]}
+                    ${allPricesArray[8].split(`Price of`).join(``)}
                 </div>
             </details>
             
@@ -227,13 +227,14 @@ app.post('/scrape', async (req, res) => {
                     USA
                 </summary>
                 <div>
-                    ${allPricesArray[9]}
+                    ${allPricesArray[9].split(`Price of`).join(``)}
                 </div>
             </details>
         </div>
     </body>
     </html>`;
 
+    const finalSend=``;
 
     
         const allPricesArrayCommaDelete= allPricesArray.toString().split(`,`).join(``);
