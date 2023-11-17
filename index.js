@@ -41,11 +41,8 @@ app.post('/scrape', async (req, res) => {
       return res.status(400).send('URL is required');
     }
     const allPricesArray=[];
-    const countryArray=[`au`,`bd`,`cn`, `in`, `indonesia`, `my`, `ng`, `pk`, `ae`, `us`];
+    const countryArray=[`au`,`bd`, `ca`,`cn`, `in`, `my`, `ng`, `pk`, `ae`, `us`];
     for (let index = 1; index <= 10; index++) {
-
-
-        if (countryArray[index-1] !==`indonesia`) {
             
             const modifiedURL= url.split(`hi94.com`).join(`hi94.com/${countryArray[index-1]}`);
             const response = await axios.get(modifiedURL);
@@ -71,18 +68,172 @@ app.post('/scrape', async (req, res) => {
                 priceTwo.push($(element).text());
             });
     
-            allPricesArray.push(`${priceStart.toString().split(`:`).join(``)}<br> ${priceOne.toString().split(`:`).join(``)}<br> ${priceTwo.toString().split(`:`).join(``)}<br><br>`);
+            allPricesArray.push(`${priceStart}<br> ${priceOne}<br> ${priceTwo}`);
             console.log(index);
 
-        } else if(countryArray[index-1] ==`indonesia`){
-            allPricesArray.push(`Check Indonesia mobile price from <a href="https://id.mobgsm.com/">mobgsm</a><br><br>`);
-
-        }
-
-
-
-        
     }
+    // add html code
+    const withStyle=`<html>
+    <head>
+        <style>
+            #productPrices{
+                width: 100%;
+                max-width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+    
+            #productPrices details{
+                margin: 0;
+            }
+            #productPrices details div {
+                border: 0px solid #cecece;
+                padding: 10px;
+                letter-spacing: .5px;
+                font-family: sans-serif;
+                font-weight: 300;
+                font-size: 14px;
+                color: rgb(50, 50, 50);
+                background-color: rgb(245, 245, 245);
+            }
+            #productPrices summary {
+                list-style: none;
+                font-family:Calibri;
+                font-weight: 400;
+                letter-spacing: 1px;
+                font-size: 18px;
+                color: rgb(139, 20, 106);
+                background-color: rgb(255, 255, 255);
+            }
+    
+            #productPrices summary::-webkit-details-marker {
+                display: none;
+            }
+    
+            #productPrices summary {
+                border: .5px solid #cecece;
+                padding: 5px;
+                cursor: pointer;
+                position: relative;
+                padding-left: calc(1.75rem + .75rem + .75rem);
+            }
+    
+            #productPrices summary:before {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: .75rem;
+                content: "↓";
+                width: 1.2rem;
+                height: 1.2rem;
+                background-color: #5ab1c0;
+                color: #FFF;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                flex-shrink: 0;
+            }
+    
+            #productPrices details[open] summary {
+                background-color: #ffffff;
+            }
+    
+            #productPrices details[open] summary:before {
+                content: "↑";
+            }
+    
+            #productPrices summary:hover {
+                background-color: #ffffff;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="productPrices">
+            <details open>
+                <summary>
+                    Australia
+                </summary>
+                <div>
+                    ${allPricesArray[0]}
+                </div>
+            </details>
+            <details>
+                <summary>
+                    Bangladesh
+                </summary>
+                <div>
+                  ${allPricesArray[1]}
+                </div>
+            </details>
+            <details>
+                <summary>
+                    Canada
+                </summary>
+                <div>
+                    ${allPricesArray[2]}
+                </div>
+            </details>
+            <details>
+                <summary>
+                    China
+                </summary>
+                <div>
+                    ${allPricesArray[3]}
+                </div>
+            </details>
+            <details>
+                <summary>
+                    India
+                </summary>
+                <div>
+                    ${allPricesArray[4]}
+                </div>
+            </details>
+            <details>
+                <summary>
+                    Malaysia
+                </summary>
+                <div>
+                    ${allPricesArray[5]}
+                </div>
+            </details>
+            <details>
+                <summary>
+                    Nigeria
+                </summary>
+                <div>
+                    ${allPricesArray[6]}
+                </div>
+            </details>
+            <details>
+                <summary>
+                    Pakistan
+                </summary>
+                <div>
+                    ${allPricesArray[7]}
+                </div>
+            </details>
+            <details>
+                <summary>
+                    UAE
+                </summary>
+                <div>
+                    ${allPricesArray[8]}
+                </div>
+            </details>
+            
+            <details>
+                <summary>
+                    USA
+                </summary>
+                <div>
+                    ${allPricesArray[9]}
+                </div>
+            </details>
+        </div>
+    </body>
+    </html>`;
+
 
     
         const allPricesArrayCommaDelete= allPricesArray.toString().split(`,`).join(``);
@@ -90,8 +241,8 @@ app.post('/scrape', async (req, res) => {
         const allPricesArrayColonReplace= allPricesArrayFirstBraket;
 
         res.setHeader("Content-Type", "text/html");
-        res.send(`<p>${allPricesArrayColonReplace}</p><script>document.get<script>`);
-        console.log(allPricesArrayColonReplace);
+        res.send(`<xmp>${withStyle}</xmp>`);
+        console.log(withStyle);
         
     
   } catch (error) {
