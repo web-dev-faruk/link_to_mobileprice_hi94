@@ -1,0 +1,57 @@
+type="text" id="input86" class="inputText" name="input86" placeholder="input86"><input type="text" id="input87" class="inputText" name="input87" placeholder="input87"><input type="text" id="input88" class="inputText" name="input88" placeholder="input88"><input type="text" id="input89" class="inputText" name="input89" placeholder="input89"><input type="text" id="input90" class="inputText" name="input90" placeholder="input90"><input type="text" id="input91" class="inputText" name="input91" placeholder="input91"><input type="text" id="input92" class="inputText" name="input92" placeholder="input92"><input type="text" id="input93" class="inputText" name="input93" placeholder="input93"><input type="text" id="input94" class="inputText" name="input94" placeholder="input94"><input type="text" id="input95" class="inputText" name="input95" placeholder="input95"><input type="text" id="input96" class="inputText" name="input96" placeholder="input96"><input type="text" id="input97" class="inputText" name="input97" placeholder="input97"><input type="text" id="input98" class="inputText" name="input98" placeholder="input98"><input type="text" id="input99" class="inputText" name="input99" placeholder="input99"><input type="text" id="input100" class="inputText" name="input100" placeholder="input100">
+    <input id="submit1" onclick="submitted()" type="submit" value="Submit">
+</div>
+<div id="output">
+
+</div>
+
+<script>
+const submittedOdd=[];
+const submittedEven=[];
+const allRowsInOne=[];
+function submitted(){
+    while (submittedOdd.length > 0) {
+        submittedOdd.pop();
+    }
+    while (submittedEven.length > 0) {
+        submittedEven.pop();
+    }
+    while (allRowsInOne.length > 0) {
+        allRowsInOne.pop();
+    }
+
+    for (let index = 1; index <= 100; index++) {
+        if (document.getElementById(input${index}).value.length >=1) {
+            if (index % 2 === 0) {
+                submittedEven.push(document.getElementById(input${index}).value);
+            } else if(index % 2 !== 0){
+                submittedOdd.push(document.getElementById(input${index}).value);
+            }
+        }
+    }
+    console.log(submittedOdd);
+    console.log(submittedEven);
+    var concatAll=``;
+    if (submittedOdd.length!==submittedEven.length) {
+        alert(Fill up Title and Content);
+    }else{
+        
+        for (let index = 1; index <= submittedOdd.length; index++) {
+            const aRowOfAdjective=<div><h2>${submittedOdd[index-1]}</h2><div><p>${submittedEven[index-1].toString().split(///).join(<p></p>)}</p></div></div>;
+            concatAll=concatAll.concat(aRowOfAdjective); 
+        }
+    }
+    document.getElementById(myForm).style.display=none;
+    document.getElementById(output).innerHTML=<xmp><div id="productDetailsTable">${concatAll}</div></xmp>;
+}
+function showForm(){
+    document.getElementById(myForm).style.display=inherit;
+}
+
+
+    
+
+</script>
+
+</body>
+</html>
