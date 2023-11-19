@@ -1,1 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Example</title>
+  <style>
 
+    #submit1{
+        color: white;
+        background-color: rgb(241, 102, 102);
+        position: fixed;
+        top: 500px;
+        left: 0;
+        margin-left: 100%;
+        transform: translate(-100%);
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 10px;
+        border: none;   
+    }
+    #submit1:hover{
+        background-color: rgb(248, 181, 94);
+    }
+    .inputText{
+        width: 80%;
+        height: 200px;
+        font-size: 25px;
+    }
+  </style>
+</head>
+<body>
+<div id="showForm" onclick="showForm()" style="border: 2px solid green; border-radius: 10px; position: fixed; padding: 10px; top: 300px; right: 0; margin: 10px; background-color: aquamarine;">Show Form</div>
+<div id="myForm">
+    <input type="text" id="input1" class="inputText" name="input1" placeholder="input1"><input type="text" id="input2" class="inputText" name="input2" placeholder="input2"><input type="text" id="input3" class="inputText" name="input3" placeholder="input3"><input type="text" id="input4" class="inputText" name="input4" placeholder="input4"><input type="text" id="input5" class="inputText" name="input5" placeholder="input5"><input type="text" id="input6" class="inputText" name="input6" placeholder="input6"><input type="text" id="input7" class="inputText" name="input7" placeholder="input7"><input type="text" id="input8" class="inputText" name="input8" placeholder="input8"><input type="text" id="input9" class="inputText" name="input9" placeholder="input9"><input type="text" id="input10" class="inputText" name="input10" placeholder="input10"><input type="text" id="input11" class="inputText" name="input11" placeholder="input11"><input type="text" id="input12" class="inputText" name="input12" placeholder="input12"><input type="text" id="input13" class="inputText" name="input13" placeholder="input13"><input type="text" id="input14" class="inputText" name="input14" placeholder="input14"><input type="text" id="input15" class="inputText" name="input15" placeholder="input15"><input type="text" id="input16" class="inputText" name="input16" placeholder="input16"><input type="text" id="input17" class="inputText" name="input17" placeholder="input17"><input type="text" id="input18" class="inputText" name="input18" placeholder="input18"><input type="text" id="input19" class="inputText" name="input19" placeholder="input19"><input type="text" id="input20" class="inputText" name="input20" placeholder="input20"><input type="text" id="input21" class="inputText" name="input21" placeholder="input21"><input type="text" id="input22" class="inputText" name="input22" placeholder="input22"><input type="text" id="input23" class="inputText" name="input23" placeholder="input23"><input type="text" id="input24" class="inputText" name="input24" placeholder="input24"><input type="text" id="input25" class="inputText" name="input25" placeholder="input25"><input type="text" id="input26" class="inputText" name="input26" placeholder="input26"><input type="text" id="input27" class="inputText" name="input27" placeholder="input27"><input type="text" id="input28" class="inputText" name="input28" placeholder="input28"><input type="text" id="input29" class="inputText" name="input29" placeholder="input29"><input type="text" id="input30" class="inputText" name="input30" placeholder="input30"><input type="text" id="input31" class="inputText" name="input31" placeholder="input31"><input type="text" id="input32" class="inputText" name="input32" placeholder="input32"><input type="text" id="input33" class="inputText" name="input33" placeholder="input33"><input type="text" id="input34" class="inputText" name="input34" placeholder="input34"><input type="text" id="input35" class="inputText" name="input35" placeholder="input35"><input type="text" id="input36" class="inputText" name="input36" placeholder="input36"><input type="text" id="input37" class="inputText" name="input37" placeholder="input37"><input type="text" id="input38" class="inputText" name="input38" placeholder="input38"><inputtypetype="text" id="input39" class="inputText" name="input39" placeholder="input39"><input type="text" id="input40" class="inputText" name="input40" placeholder="input40"><input type="text" id="input41" class="inputText" name="input41" placeholder="input41"><input type="text" id="input42" class="inputText" name="input42" placeholder="input42"><input type="text" id="input43" class="inputText" name="input43" placeholder="input43"><input type="text" id="input44" class="inputText" name="input44" placeholder="input44"><input type="text" id="input45" class="inputText" name="input45" placeholder="input45"><input type="text" id="input46" class="inputText" name="input46" placeholder="input46"><input type="text" id="input47" class="inputText" name="input47" placeholder="input47"><input type="text" id="input48" class="inputText" name="input48" placeholder="input48"><input type="text" id="input49" class="inputText" name="input49" placeholder="input49"><input type="text" id="input50" class="inputText" name="input50" placeholder="input50"><input type="text" id="input51" class="inputText" name="input51" placeholder="input51"><input type="text" id="input52" class="inputText" name="input52" placeholder="input52"><input type="text" id="input53" class="inputText" name="input53" placeholder="input53"><input type="text" id="input54" class="inputText" name="input54" placeholder="input54"><input type="text" id="input55" class="inputText" name="input55" placeholder="input55"><input type="text" id="input56" class="inputText" name="input56" placeholder="input56"><input type="text" id="input57" class="inputText" name="input57" placeholder="input57"><input type="text" id="input58" class="inputText" name="input58" placeholder="input58"><input type="text" id="input59" class="inputText" name="input59" placeholder="input59"><input type="text" id="input60" class="inputText" name="input60" placeholder="input60"><input type="text" id="input61" class="inputText" name="input61" placeholder="input61"><input type="text" id="input62" class="inputText" name="input62" placeholder="input62"><input type="text" id="input63" class="inputText" name="input63" placeholder="input63"><input type="text" id="input64" class="inputText" name="input64" placeholder="input64"><input type="text" id="input65" class="inputText" name="input65" placeholder="input65"><input type="text" id="input66" class="inputText" name="input66" placeholder="input66"><input type="text" id="input67" class="inputText" name="input67" placeholder="input67"><input type="text" id="input68" class="inputText" name="input68" placeholder="input68"><input type="text" id="input69" class="inputText" name="input69" placeholder="input69"><input type="text" id="input70" class="inputText" name="input70" placeholder="input70"><input type="text" id="input71" class="inputText" name="input71" placeholder="input71"><input type="text" id="input72" class="inputText" name="input72" placeholder="input72"><input type="text" id="input73" class="inputText" name="input73" placeholder="input73"><input type="text" id="input74" class="inputText" name="input74" placeholder="input74"><input type="text" id="input75" class="inputText" name="input75" placeholder="input75"><input type="text" id="input76" class="inputText" name="input76" placeholder="input76"><input type="text" id="input77" class="inputText" name="input77" placeholder="input77"><input type="text" id="input78" class="inputText" name="input78" placeholder="input78"><input type="text" id="input79" class="inputText" name="input79" placeholder="input79"><input type="text" id="input80" class="inputText" name="input80" placeholder="input80"><input type="text" id="input81" class="inputText" name="input81" placeholder="input81"><input type="text" id="input82" class="inputText" name="input82" placeholder="input82"><input type="text" id="input83" class="inputText" name="input83" placeholder="input83"><input type="text" id="input84" class="inputText" name="input84" placeholder="input84"><input type="text" id="input85" class="inputText" name="input85" placeholder="input85"><inputtype="text" id="input86" class="inputText" name="input86" placeholder="input86"><input type="text" id="input87" class="inputText" name="input87" placeholder="input87"><input type="text" id="input88" class="inputText" name="input88" placeholder="input88"><input type="text" id="input89" class="inputText" name="input89" placeholder="input89"><input type="text" id="input90" class="inputText" name="input90" placeholder="input90"><input type="text" id="input91" class="inputText" name="input91" placeholder="input91"><input type="text" id="input92" class="inputText" name="input92" placeholder="input92"><input type="text" id="input93" class="inputText" name="input93" placeholder="input93"><input type="text" id="input94" class="inputText" name="input94" placeholder="input94"><input type="text" id="input95" class="inputText" name="input95" placeholder="input95"><input type="text" id="input96" class="inputText" name="input96" placeholder="input96"><input type="text" id="input97" class="inputText" name="input97" placeholder="input97"><input type="text" id="input98" class="inputText" name="input98" placeholder="input98"><input type="text" id="input99" class="inputText" name="input99" placeholder="input99"><input type="text" id="input100" class="inputText" name="input100" placeholder="input100">
+    <input id="submit1" onclick="submitted()" type="submit" value="Submit">
+</div>
+<div id="output">
+
+</div>
+
+<script>
+const submittedOdd=[];
+const submittedEven=[];
+const allRowsInOne=[];
+function submitted(){
+    while (submittedOdd.length > 0) {
+        submittedOdd.pop();
+    }
+    while (submittedEven.length > 0) {
+        submittedEven.pop();
+    }
+    while (allRowsInOne.length > 0) {
+        allRowsInOne.pop();
+    }
+
+    for (let index = 1; index <= 100; index++) {
+        if (document.getElementById(input${index}).value.length >=1) {
+            if (index % 2 === 0) {
+                submittedEven.push(document.getElementById(input${index}).value);
+            } else if(index % 2 !== 0){
+                submittedOdd.push(document.getElementById(input${index}).value);
+            }
+        }
+    }
+    console.log(submittedOdd);
+    console.log(submittedEven);
+    var concatAll=``;
+    if (submittedOdd.length!==submittedEven.length) {
+        alert(Fill up Title and Content);
+    }else{
+        
+        for (let index = 1; index <= submittedOdd.length; index++) {
+            const aRowOfAdjective=<div><h2>${submittedOdd[index-1]}</h2><div><p>${submittedEven[index-1].toString().split(///).join(<p></p>)}</p></div></div>;
+            concatAll=concatAll.concat(aRowOfAdjective); 
+        }
+    }
+    document.getElementById(myForm).style.display=none;
+    document.getElementById(output).innerHTML=<xmp><div id="productDetailsTable">${concatAll}</div></xmp>;
+}
+function showForm(){
+    document.getElementById(myForm).style.display=inherit;
+}
+
+
+    
+
+</script>
+
+</body>
+</html>
